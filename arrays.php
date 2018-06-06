@@ -24,33 +24,6 @@ interface iTemplate
     public function setVariable($name, $var);
     public function getHtml($template);
 }
-/*
-// インターフェイスを実装する。
-// これは動作します。
-class Template implements iTemplate
-{
-    private $vars = array();
-
-    public function setVariable($name, $var)
-    {
-        $this->vars[$name] = $var;
-    }
-
-    public function getHtml($template)
-    {
-        foreach($this->vars as $name => $value) {
-            $template = str_replace('{' . $name . '}', $value, $template);
-        }
-
-        return $template;
-    }
-}
-
-$t = new Template();
-$t->setVariable('test', 'testvar');
-$template = '{test}, {testaa}, {tst}';
-echo $t->getHtml($template);
-*/
 
 $fruits = array(
     'apple' => array(
@@ -70,8 +43,8 @@ $fruits = array(
 foreach ($fruits as $name => $value) {
     echo "$name は1つ {$value['price']} 円で、{$value['count']} 個です", PHP_EOL;
 }
-$hoge = array_key_exists('apple', $fruits);
-echo $hoge;
+
+array_key_exists('apple', $fruits); // true
 
 ?>
 </body>
