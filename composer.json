@@ -1,0 +1,15 @@
+{
+    "name": "phpstudy",
+    "require": {},
+    "require-dev" : {
+        "squizlabs/php_codesniffer": "*",
+        "zendframework/zend-coding-standard": "@stable"
+    },
+    "config": {
+        "vendor-dir": "Vendor/"
+    },
+    "scripts": {
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf"
+    }
+}
