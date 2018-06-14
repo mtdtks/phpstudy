@@ -23,6 +23,41 @@ new Human ('次郎', 62, 170),
 ]
  *
  */
+
+$array = array(
+    0 => array(
+        'name' => 'たろう',
+        'weight' => 60,
+        'height' => 166,
+    ),
+    1 => array(
+        'name' => '次郎',
+        'weight' => 62,
+        'height' => 170,
+    ),
+    2 => array(
+        'name' => '三郎',
+        'weight' => 75,
+        'height' => 180,
+    ),
+);
+
+var_dump($array);
+
+interface Creature
+{
+
+}
+class Human implements Creature
+{
+
+    public function __construct()
+    {
+    }
+
+}
+
+
 interface Sorter
 {
     /**
@@ -33,11 +68,28 @@ interface Sorter
 }
 
 
-class MyArraySort
+class Algorithm
 {
     function my_array_sort (array $array): array
     {
         //sort
 
+    }
+}
+
+
+class QuickSort
+{
+    function sort (Sorter $sorter)
+    {
+       // sort
+    }
+}
+
+class BubbleSort
+{
+    function sort (Sorter $sorter)
+    {
+       // sort
     }
 }
