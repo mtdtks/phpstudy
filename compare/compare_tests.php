@@ -65,7 +65,7 @@ class Person implements Human
     }
 }
 
-$input = array( new Person('たろう', 60, 165), new Person('次郎', 62, 170));
+//$input = array( new Person('たろう', 60, 165), new Person('次郎', 62, 170));
 
 //var_dump($input);
 
@@ -115,18 +115,18 @@ interface ComparatorImpl
 {
 }
 
-class Comparator implements ComparatorImpl
-{
-    private $selecter;
-    // -1 0 1を返す？
+//class Comparator implements ComparatorImpl
+//{
+//    private $selecter;
+//    // -1 0 1を返す？
+//
+//    public function __construct($selecter = 'bubble')
+//    {
+//        $this->selecter = $selecter;
+//    }
+//}
 
-    public function __construct($selecter = 'bubble')
-    {
-        $this->selecter = $selecter;
-    }
-}
-
-$algorithm = new Algorithm();
+//$algorithm = new Algorithm();
 
 //$simple_array = array(
 //    'b' => 10,
@@ -141,14 +141,39 @@ $algorithm = new Algorithm();
 //$result = $algorithm->sort($simple_array);
 //var_dump($result);
 
-$myArraySort = function (Array $input, Algorithm $algorithm, Comparator $comparator): Array
+//$myArraySort = function (Array $input, Algorithm $algorithm, Comparator $comparator): Array
+//{
+//
+//};
+
+/**
+ * Interface CompalatorImpl
+ *
+ */
+interface CompalatorImpl
 {
+    public function compare ($first, $second);
+}
 
-};
+class Compalator implements ComparatorImpl
+{
+    public function compare ($a, $b)
+    {
+        $res = null;
 
+        if ($a < $b) {
+            $res = -1;
+        } elseif ($a > $b) {
+            $res = 1;
+        } else {
+            $res = 0;
+        }
 
+        return $res;
+    }
+}
 
-
+// $arrayのふたつのPersonをくらべて$target順に並べ替える
 class SimpleTest
 {
     public function sort($array, $target)
@@ -168,6 +193,10 @@ class SimpleTest
     }
 }
 
-$target = getName;
-var_dump($input[0]->$target());
+$c = new Compalator();
+$input = array( new Person('たろう', 60, 165), new Person('次郎', 62, 170), new Person('三郎', 55, 155));
+
+$target = 'weight';
+
+
 
